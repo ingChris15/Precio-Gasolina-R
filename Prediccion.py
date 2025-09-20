@@ -2,17 +2,30 @@ import numpy as np
 import streamlit as st
 import pandas as pd
  
-st.write(''' # Predicción del precio de la gasolina ''')
+st.set_page_config(page_title="Predicción Gasolina", page_icon="⛽", layout="centered")
+ 
+st.title("⛽ Predicción del precio de la gasolina ⛽")
 st.image("gasolina.jpg", caption="Precio de la gasolina.")
  
-st.header('Datos')
-st.image("Relacion de estados.png", caption="Estados.")
+#Datos de referencia
+st.header("Datos de referencia")
+st.image("Relacion de estados.png", caption="Estados de México")
+ 
+st.header("📊 Ingrese los datos para la predicción")
  
 def user_input_features():
   # Entrada
-  Año = st.number_input('Año (a partir de 2017):',  min_value=2017, max_value=3000, value = 2017, step = 1)
-  Mes = st.number_input('Mes(ENE: 1, FEB: 2, MAR: 3, ABR: 4, MAY: 5, JUN: 6,JUL: 7,AGO: 8, SEP: 9, OCT: 10, NOV: 11, DIC: 12):', min_value=0, max_value=12, value = 0, step = 1)
-  Entidad = st.number_input('Entidad (Valores del 0-32):', min_value=0, max_value=32, value = 0, step = 1)
+  Año = st.slider('Año',  min_value=2017, max_value=3000, value = 2024, step = 1)
+  Meses = {
+    "Enero": 1, "Febrero": 2, "Marzo": 3, "Abril": 4,
+    "Mayo": 5, "Junio": 6, "Julio": 7, "Agosto": 8,
+    "Septiembre": 9, "Octubre": 10, "Noviembre": 11, "Diciembre": 12
+  }
+ 
+  mes_nombre = st.selectbox("Mes", list(Meses.keys()))
+  Mes = Meses[mes_nombre]
+ 
+  Entidad = st.number_input('Entidad (0-32):', min_value=0, max_value=32, value = 0, step = 1)
  
  
   user_input_data = {'Año': Año,
@@ -39,16 +52,13 @@ b1 = LR.coef_
 b0 = LR.intercept_
 prediccion = b0 + b1[0]*df.Año + b1[1]*df.Mes + b1[2]*df.Entidad
  
-st.subheader('Cálculo del precio')
-#st.write('El precio sera', prediccion)
-#st.markdown("<h2 style='text-align: center; color: #884EA0;'>Cálculo del precio</h2>", unsafe_allow_html=True)
- 
+st.subheader("💡 Resultado de la predicción")
 st.markdown(
     f"""
 <div style="text-align: center; background-color: #F2F4F4; padding: 20px; border-radius: 15px;">
 <h3 style="color: #D35400;">El precio será:</h3>
 <p style="font-size: 28px; font-weight: bold; color: #1F618D;">${prediccion.values[0]:.2f} MXN</p>
 </div>
-    """, 
+    """,
     unsafe_allow_html=True
 )

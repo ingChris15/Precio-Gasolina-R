@@ -24,14 +24,14 @@ def user_input_features():
  
   mes_nombre = st.selectbox("Mes", list(Meses.keys()))
   Mes = Meses[mes_nombre]
- 
- Entidades = {
-     "Nacional": 17,	"Aguascalientes": 0,	"Baja California": 1,	"Baja California Sur": 2, "Campeche": 3,	"Chiapas": 4,	"Chihuahua": 5,
-     "Ciudad de México": 6,	"Coahuila de Zaragoza": 7,	"Colima": 8,	"Durango": 9,	"Guanajuato": 10,	"Guerrero": 11,	"Hidalgo": 12,
-     "Jalisco": 13,	"Michoacán de Ocampo": 14,	"Morelos": 15,	"México": 16,	"Nayarit": 18,	"Nuevo León": 19, "Oaxaca": 20,	"Puebla": 21,
-     "Querétaro": 22,	"Quintana Roo": 23,	"San Luis Potosí": 24,	"Sinaloa":25,	"Sonora": 26,	"Tabasco": 27,	"Tamaulipas": 28,	"Tlaxcala": 29,
-     "Veracruz": 30,	"Yucatán": 31,	"Zacatecas": 32
-  }
+
+  Entidades = {
+      "Nacional": 17,	"Aguascalientes": 0,	"Baja California": 1,	"Baja California Sur": 2, "Campeche": 3,	"Chiapas": 4,	"Chihuahua": 5,
+      "Ciudad de México": 6,	"Coahuila de Zaragoza": 7,	"Colima": 8,	"Durango": 9,	"Guanajuato": 10,	"Guerrero": 11,	"Hidalgo": 12,
+      "Jalisco": 13,	"Michoacán de Ocampo": 14,	"Morelos": 15,	"México": 16,	"Nayarit": 18,	"Nuevo León": 19, "Oaxaca": 20,	"Puebla": 21,
+      "Querétaro": 22,	"Quintana Roo": 23,	"San Luis Potosí": 24,	"Sinaloa":25,	"Sonora": 26,	"Tabasco": 27,	"Tamaulipas": 28,	"Tlaxcala": 29,
+      "Veracruz": 30,	"Yucatán": 31,	"Zacatecas": 32
+      }
   entidad_nombre = st.selectbox("Entidad", list(Entidades.keys()))
   Entidad = Entidades[entidad_nombre]
  

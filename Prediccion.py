@@ -7,22 +7,18 @@ st.set_page_config(page_title="Predicción Gasolina", page_icon="⛽", layout="c
 st.title("⛽ Predicción del precio de la gasolina Regular ⛽")
 st.image("gasolina.jpg", caption="gasolina regular.")
  
-#Datos de referencia
-st.header("Datos de referencia")
-st.image("Relacion de estados.png", caption="Estados de México")
- 
 st.header("📊 Ingrese los datos para la predicción")
  
 def user_input_features():
   # Entrada
-  Año = st.slider('Año',  min_value=2017, max_value=3000, value = 2024, step = 1)
+  Año = st.slider('📅Año',  min_value=2017, max_value=3000, value = 2024, step = 1)
   Meses = {
     "Enero": 1, "Febrero": 2, "Marzo": 3, "Abril": 4,
     "Mayo": 5, "Junio": 6, "Julio": 7, "Agosto": 8,
     "Septiembre": 9, "Octubre": 10, "Noviembre": 11, "Diciembre": 12
   }
  
-  mes_nombre = st.selectbox("Mes", list(Meses.keys()))
+  mes_nombre = st.selectbox("📆Mes", list(Meses.keys()))
   Mes = Meses[mes_nombre]
 
   Entidades = {
@@ -32,7 +28,7 @@ def user_input_features():
       "Querétaro": 22,	"Quintana Roo": 23,	"San Luis Potosí": 24,	"Sinaloa":25,	"Sonora": 26,	"Tabasco": 27,	"Tamaulipas": 28,	"Tlaxcala": 29,
       "Veracruz": 30,	"Yucatán": 31,	"Zacatecas": 32
       }
-  entidad_nombre = st.selectbox("Entidad", list(Entidades.keys()))
+  entidad_nombre = st.selectbox("🌎Entidad", list(Entidades.keys()))
   Entidad = Entidades[entidad_nombre]
  
  

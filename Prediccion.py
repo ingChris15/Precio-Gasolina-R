@@ -40,4 +40,15 @@ b0 = LR.intercept_
 prediccion = b0 + b1[0]*df.Año + b1[1]*df.Mes + b1[2]*df.Entidad
  
 st.subheader('Cálculo del precio')
-st.write('El precio sera', prediccion)
+#st.write('El precio sera', prediccion)
+#st.markdown("<h2 style='text-align: center; color: #884EA0;'>Cálculo del precio</h2>", unsafe_allow_html=True)
+ 
+st.markdown(
+    f"""
+<div style="text-align: center; background-color: #F2F4F4; padding: 20px; border-radius: 15px;">
+<h3 style="color: #D35400;">El precio será:</h3>
+<p style="font-size: 28px; font-weight: bold; color: #1F618D;">${prediccion.values[0]:.2f} MXN</p>
+</div>
+    """, 
+    unsafe_allow_html=True
+)

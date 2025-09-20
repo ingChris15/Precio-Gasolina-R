@@ -4,7 +4,7 @@ import pandas as pd
  
 st.set_page_config(page_title="Predicción Gasolina", page_icon="⛽", layout="centered")
  
-st.title("⛽ Predicción del precio de la gasolina Regular ⛽")
+st.title("⛽ Predicción del Precio de la Gasolina Regular 💰")
 st.image("gasolina.jpg", caption="gasolina regular.")
  
 st.header("📊 Ingrese los datos para la predicción")
@@ -60,7 +60,7 @@ st.subheader("💡 Resultado de la predicción")
 st.markdown(
     f"""
 <div style="text-align: center; background-color: #F2F4F4; padding: 20px; border-radius: 15px;">
-<h3 style="color: #D35400;">El precio será:</h3>
+<h3 style="color: #D35400;">🤑El precio será:</h3>
 <p style="font-size: 28px; font-weight: bold; color: #1F618D;">${prediccion.values[0]:.2f} MXN</p>
 </div>
     """,

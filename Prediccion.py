@@ -11,7 +11,7 @@ st.header("📊 Ingrese los datos para la predicción")
  
 def user_input_features():
   # Entrada
-  Año = st.slider('📅Año',  min_value=2017, max_value=3000, value = 2024, step = 1)
+  Año = st.slider('📅Año',  min_value=2017, max_value=2100, value = 2025, step = 1)
   Meses = {
     "Enero": 1, "Febrero": 2, "Marzo": 3, "Abril": 4,
     "Mayo": 5, "Junio": 6, "Julio": 7, "Agosto": 8,
